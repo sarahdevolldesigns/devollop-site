@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="devollop — Web, SEO, and Strategy for local businesses. Your digital presence, made clear.">
 <title>devollop — Web · SEO · Strategy</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="style.css">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <style>
   /* ── HERO ── */
@@ -107,75 +108,76 @@
   .hero-scroll-line { width: 40px; height: 1px; background: var(--gold); }
   .hero-scroll span { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mid); }
 
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(20px); }
+to   { opacity: 1; transform: translateY(0); }
+}
 
-  /* ── SHARED ── */
-  section { padding: 96px 48px; }
-  .section-inner { max-width: 960px; margin: 0 auto; }
-  .section-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 400; margin-bottom: 16px; }
-  .section-title { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(30px, 5vw, 48px); letter-spacing: -0.02em; line-height: 1.1; font-variation-settings: "opsz" 144; margin-bottom: 20px; }
-  .section-rule { width: 48px; height: 2px; background: var(--gold); margin-bottom: 48px; }
+/* ── SHARED ── */
+section { padding: 96px 48px; }
+.section-inner { max-width: 960px; margin: 0 auto; }
+.section-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(–gold); font-weight: 400; margin-bottom: 16px; }
+.section-title { font-family: ‘Fraunces’, serif; font-weight: 500; font-size: clamp(30px, 5vw, 48px); letter-spacing: -0.02em; line-height: 1.1; font-variation-settings: “opsz” 144; margin-bottom: 20px; }
+.section-rule { width: 48px; height: 2px; background: var(–gold); margin-bottom: 48px; }
 
-  /* ── SERVICES ── */
-  .services { background: var(--light); }
-  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--rule); }
-  .service-card { background: var(--light); padding: 48px 36px; transition: background 0.25s; }
-  .service-card:hover { background: var(--parch); }
-  .service-num { font-family: 'Fraunces', serif; font-size: 11px; color: var(--gold); font-weight: 400; letter-spacing: 0.1em; margin-bottom: 16px; font-variation-settings: "opsz" 12; }
-  .service-line { width: 32px; height: 2px; background: var(--gold); margin-bottom: 20px; }
-  .service-title { font-family: 'Fraunces', serif; font-weight: 500; font-size: 26px; letter-spacing: -0.02em; margin-bottom: 14px; font-variation-settings: "opsz" 72; line-height: 1.1; }
-  .service-desc { font-size: 14px; line-height: 1.75; color: var(--mid); font-weight: 300; }
+/* ── SERVICES ── */
+.services { background: var(–light); }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(–rule); }
+.service-card { background: var(–light); padding: 48px 36px; transition: background 0.25s; }
+.service-card:hover { background: var(–parch); }
+.service-num { font-family: ‘Fraunces’, serif; font-size: 11px; color: var(–gold); font-weight: 400; letter-spacing: 0.1em; margin-bottom: 16px; font-variation-settings: “opsz” 12; }
+.service-line { width: 32px; height: 2px; background: var(–gold); margin-bottom: 20px; }
+.service-title { font-family: ‘Fraunces’, serif; font-weight: 500; font-size: 26px; letter-spacing: -0.02em; margin-bottom: 14px; font-variation-settings: “opsz” 72; line-height: 1.1; }
+.service-desc { font-size: 14px; line-height: 1.75; color: var(–mid); font-weight: 300; }
 
-  /* ── HOW I WORK ── */
-  .how { background: var(--navy); }
-  .how .section-title { color: var(--cream); }
-  .how-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-  .how-left p { font-size: 18px; line-height: 1.75; font-weight: 300; color: rgba(245,240,232,0.8); margin-bottom: 20px; }
-  .how-left p strong { color: var(--cream); font-weight: 400; }
-  .how-left p em { color: var(--gold); font-style: normal; }
-  .how-steps { display: flex; flex-direction: column; }
-  .how-step { padding: 28px 0; border-bottom: 1px solid rgba(245,240,232,0.08); display: flex; gap: 22px; align-items: flex-start; }
-  .how-step:first-child { padding-top: 0; }
-  .step-num { font-family: 'Fraunces', serif; font-size: 12px; color: var(--gold); font-weight: 400; flex-shrink: 0; padding-top: 2px; letter-spacing: 0.05em; font-variation-settings: "opsz" 12; }
-  .step-content h4 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 17px; letter-spacing: -0.01em; margin-bottom: 6px; font-variation-settings: "opsz" 72; color: var(--cream); }
-  .step-content p { font-size: 13.5px; line-height: 1.65; color: rgba(245,240,232,0.55); font-weight: 300; }
+/* ── HOW I WORK ── */
+.how { background: var(–navy); }
+.how .section-title { color: var(–cream); }
+.how-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+.how-left p { font-size: 18px; line-height: 1.75; font-weight: 300; color: rgba(245,240,232,0.8); margin-bottom: 20px; }
+.how-left p strong { color: var(–cream); font-weight: 400; }
+.how-left p em { color: var(–gold); font-style: normal; }
+.how-steps { display: flex; flex-direction: column; }
+.how-step { padding: 28px 0; border-bottom: 1px solid rgba(245,240,232,0.08); display: flex; gap: 22px; align-items: flex-start; }
+.how-step:first-child { padding-top: 0; }
+.step-num { font-family: ‘Fraunces’, serif; font-size: 12px; color: var(–gold); font-weight: 400; flex-shrink: 0; padding-top: 2px; letter-spacing: 0.05em; font-variation-settings: “opsz” 12; }
+.step-content h4 { font-family: ‘Fraunces’, serif; font-weight: 500; font-size: 17px; letter-spacing: -0.01em; margin-bottom: 6px; font-variation-settings: “opsz” 72; color: var(–cream); }
+.step-content p { font-size: 13.5px; line-height: 1.65; color: rgba(245,240,232,0.55); font-weight: 300; }
 
-  /* ── TESTIMONIALS ── */
-  .testimonials { background: var(--parch); }
-  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .testimonial-card { background: var(--white); padding: 32px 28px; border-radius: 4px; position: relative; }
-  .testimonial-card::before { content: '\201C'; font-family: 'Fraunces', serif; font-size: 60px; color: var(--gold); opacity: 0.25; line-height: 1; position: absolute; top: 18px; left: 24px; font-variation-settings: "opsz" 144; }
-  .testimonial-text { font-size: 14px; line-height: 1.75; color: var(--navy); font-weight: 300; margin-bottom: 20px; padding-top: 24px; font-style: italic; }
-  .testimonial-author { font-size: 12px; font-weight: 500; color: var(--navy); }
-  .testimonial-biz { font-size: 11px; color: var(--mid); margin-top: 2px; font-weight: 300; }
-  .placeholder-card { background: var(--cream); border: 1.5px dashed rgba(26,35,50,0.15); }
-  .placeholder-card .testimonial-text { color: var(--mid); opacity: 0.6; font-style: normal; }
+/* ── TESTIMONIALS ── */
+.testimonials { background: var(–parch); }
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.testimonial-card { background: var(–white); padding: 32px 28px; border-radius: 4px; position: relative; }
+.testimonial-card::before { content: ‘\201C’; font-family: ‘Fraunces’, serif; font-size: 60px; color: var(–gold); opacity: 0.25; line-height: 1; position: absolute; top: 18px; left: 24px; font-variation-settings: “opsz” 144; }
+.testimonial-text { font-size: 14px; line-height: 1.75; color: var(–navy); font-weight: 300; margin-bottom: 20px; padding-top: 24px; font-style: italic; }
+.testimonial-author { font-size: 12px; font-weight: 500; color: var(–navy); }
+.testimonial-biz { font-size: 11px; color: var(–mid); margin-top: 2px; font-weight: 300; }
+.placeholder-card { background: var(–cream); border: 1.5px dashed rgba(26,35,50,0.15); }
+.placeholder-card .testimonial-text { color: var(–mid); opacity: 0.6; font-style: normal; }
 
-  /* ── CONTACT ── */
-  .contact { background: var(--navy); text-align: center; padding: 112px 48px; }
-  .contact .section-label { color: var(--gold); }
-  .contact .section-title { color: var(--cream); margin: 0 auto 20px; max-width: 560px; }
-  .contact-rule { width: 48px; height: 2px; background: var(--gold); margin: 0 auto 36px; }
-  .contact-sub { font-size: 16px; color: rgba(245,240,232,0.55); font-weight: 300; margin-bottom: 40px; line-height: 1.65; }
-  .contact-cta { display: inline-block; background: var(--gold); color: var(--navy); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; padding: 16px 44px; border-radius: 3px; text-decoration: none; transition: background 0.2s, transform 0.2s; }
-  .contact-cta:hover { background: #d4a96e; transform: translateY(-1px); }
-  .contact-note { margin-top: 18px; font-size: 12px; color: rgba(245,240,232,0.3); font-weight: 300; }
+/* ── CONTACT ── */
+.contact { background: var(–navy); text-align: center; padding: 112px 48px; }
+.contact .section-label { color: var(–gold); }
+.contact .section-title { color: var(–cream); margin: 0 auto 20px; max-width: 560px; }
+.contact-rule { width: 48px; height: 2px; background: var(–gold); margin: 0 auto 36px; }
+.contact-sub { font-size: 16px; color: rgba(245,240,232,0.55); font-weight: 300; margin-bottom: 40px; line-height: 1.65; }
+.contact-cta { display: inline-block; background: var(–gold); color: var(–navy); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; padding: 16px 44px; border-radius: 3px; text-decoration: none; transition: background 0.2s, transform 0.2s; }
+.contact-cta:hover { background: #d4a96e; transform: translateY(-1px); }
+.contact-note { margin-top: 18px; font-size: 12px; color: rgba(245,240,232,0.3); font-weight: 300; }
 
-  /* ── RESPONSIVE ── */
-  @media (max-width: 768px) {
-    .hero { padding: 100px 24px 64px; }
-    .hero-bg-letter { font-size: 280px; }
-    .hero-scroll { left: 24px; }
-    section { padding: 64px 24px; }
-    .services-grid { grid-template-columns: 1fr; }
-    .how-grid { grid-template-columns: 1fr; gap: 40px; }
-    .testimonials-grid { grid-template-columns: 1fr; }
-    .contact { padding: 72px 24px; }
-  }
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+.hero { padding: 100px 24px 64px; }
+.hero-bg-letter { font-size: 280px; }
+.hero-scroll { left: 24px; }
+section { padding: 64px 24px; }
+.services-grid { grid-template-columns: 1fr; }
+.how-grid { grid-template-columns: 1fr; gap: 40px; }
+.testimonials-grid { grid-template-columns: 1fr; }
+.contact { padding: 72px 24px; }
+}
 </style>
+
 </head>
 <body>
 
@@ -194,6 +196,7 @@
 </nav>
 
 <!-- HERO -->
+
 <section class="hero">
   <div class="hero-bg-letter">d</div>
   <div class="hero-inner">
@@ -210,6 +213,7 @@
 </section>
 
 <!-- SERVICES -->
+
 <section class="services" id="services">
   <div class="section-inner">
     <p class="section-label">What I do</p>
@@ -239,6 +243,7 @@
 </section>
 
 <!-- HOW I WORK -->
+
 <section class="how" id="how">
   <div class="section-inner">
     <p class="section-label">How I work</p>
@@ -285,6 +290,7 @@
 </section>
 
 <!-- TESTIMONIALS -->
+
 <section class="testimonials" id="testimonials">
   <div class="section-inner">
     <p class="section-label">Results</p>
@@ -311,6 +317,7 @@
 </section>
 
 <!-- CONTACT -->
+
 <section class="contact" id="contact">
   <div class="section-inner">
     <p class="section-label">Let's talk</p>
@@ -332,6 +339,7 @@
   <span class="footer-copy">© 2026 devollop</span>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="main.js"></script>
+
 </body>
 </html>
