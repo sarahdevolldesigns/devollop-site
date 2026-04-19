@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="devollop — Web, SEO, and Strategy for local businesses. Your digital presence, made clear.">
+<title>devollop — Web · SEO · Strategy</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 48px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(ellipse at 80% 50%, rgba(200,153,97,0.07) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-bg-letter {
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 520px;
+    color: rgba(255,255,255,0.03);
+    line-height: 1;
+    font-variation-settings: "opsz" 144;
+    pointer-events: none;
+    user-select: none;
+  }
+  .hero-inner {
+    max-width: 800px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 400;
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.2s;
+  }
+  .hero-wordmark {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(64px, 10vw, 120px);
+    color: var(--cream);
+    letter-spacing: -0.03em;
+    line-height: 0.92;
+    font-variation-settings: "opsz" 144;
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.4s;
+  }
+  .hero-descriptor {
+    font-size: 17px;
+    color: rgba(245,240,232,0.75);
+    font-weight: 300;
+    line-height: 1.65;
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.6s;
+    max-width: 520px;
+  }
+  .hero-descriptor strong { color: var(--cream); font-weight: 400; }
+  .hero-cta {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 16px 36px;
+    border-radius: 3px;
+    text-decoration: none;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.8s;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .hero-cta:hover { background: #d4a96e; transform: translateY(-1px); }
+  .hero-scroll {
+    position: absolute;
+    bottom: 36px;
+    left: 48px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 1.2s;
+  }
+  .hero-scroll-line { width: 40px; height: 1px; background: var(--gold); }
+  .hero-scroll span { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mid); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SHARED ── */
+  section { padding: 96px 48px; }
+  .section-inner { max-width: 960px; margin: 0 auto; }
+  .section-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 400; margin-bottom: 16px; }
+  .section-title { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(30px, 5vw, 48px); letter-spacing: -0.02em; line-height: 1.1; font-variation-settings: "opsz" 144; margin-bottom: 20px; }
+  .section-rule { width: 48px; height: 2px; background: var(--gold); margin-bottom: 48px; }
+
+  /* ── SERVICES ── */
+  .services { background: var(--light); }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--rule); }
+  .service-card { background: var(--light); padding: 48px 36px; transition: background 0.25s; }
+  .service-card:hover { background: var(--parch); }
+  .service-num { font-family: 'Fraunces', serif; font-size: 11px; color: var(--gold); font-weight: 400; letter-spacing: 0.1em; margin-bottom: 16px; font-variation-settings: "opsz" 12; }
+  .service-line { width: 32px; height: 2px; background: var(--gold); margin-bottom: 20px; }
+  .service-title { font-family: 'Fraunces', serif; font-weight: 500; font-size: 26px; letter-spacing: -0.02em; margin-bottom: 14px; font-variation-settings: "opsz" 72; line-height: 1.1; }
+  .service-desc { font-size: 14px; line-height: 1.75; color: var(--mid); font-weight: 300; }
+
+  /* ── HOW I WORK ── */
+  .how { background: var(--navy); }
+  .how .section-title { color: var(--cream); }
+  .how-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+  .how-left p { font-size: 18px; line-height: 1.75; font-weight: 300; color: rgba(245,240,232,0.8); margin-bottom: 20px; }
+  .how-left p strong { color: var(--cream); font-weight: 400; }
+  .how-left p em { color: var(--gold); font-style: normal; }
+  .how-steps { display: flex; flex-direction: column; }
+  .how-step { padding: 28px 0; border-bottom: 1px solid rgba(245,240,232,0.08); display: flex; gap: 22px; align-items: flex-start; }
+  .how-step:first-child { padding-top: 0; }
+  .step-num { font-family: 'Fraunces', serif; font-size: 12px; color: var(--gold); font-weight: 400; flex-shrink: 0; padding-top: 2px; letter-spacing: 0.05em; font-variation-settings: "opsz" 12; }
+  .step-content h4 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 17px; letter-spacing: -0.01em; margin-bottom: 6px; font-variation-settings: "opsz" 72; color: var(--cream); }
+  .step-content p { font-size: 13.5px; line-height: 1.65; color: rgba(245,240,232,0.55); font-weight: 300; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials { background: var(--parch); }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .testimonial-card { background: var(--white); padding: 32px 28px; border-radius: 4px; position: relative; }
+  .testimonial-card::before { content: '\201C'; font-family: 'Fraunces', serif; font-size: 60px; color: var(--gold); opacity: 0.25; line-height: 1; position: absolute; top: 18px; left: 24px; font-variation-settings: "opsz" 144; }
+  .testimonial-text { font-size: 14px; line-height: 1.75; color: var(--navy); font-weight: 300; margin-bottom: 20px; padding-top: 24px; font-style: italic; }
+  .testimonial-author { font-size: 12px; font-weight: 500; color: var(--navy); }
+  .testimonial-biz { font-size: 11px; color: var(--mid); margin-top: 2px; font-weight: 300; }
+  .placeholder-card { background: var(--cream); border: 1.5px dashed rgba(26,35,50,0.15); }
+  .placeholder-card .testimonial-text { color: var(--mid); opacity: 0.6; font-style: normal; }
+
+  /* ── CONTACT ── */
+  .contact { background: var(--navy); text-align: center; padding: 112px 48px; }
+  .contact .section-label { color: var(--gold); }
+  .contact .section-title { color: var(--cream); margin: 0 auto 20px; max-width: 560px; }
+  .contact-rule { width: 48px; height: 2px; background: var(--gold); margin: 0 auto 36px; }
+  .contact-sub { font-size: 16px; color: rgba(245,240,232,0.55); font-weight: 300; margin-bottom: 40px; line-height: 1.65; }
+  .contact-cta { display: inline-block; background: var(--gold); color: var(--navy); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; padding: 16px 44px; border-radius: 3px; text-decoration: none; transition: background 0.2s, transform 0.2s; }
+  .contact-cta:hover { background: #d4a96e; transform: translateY(-1px); }
+  .contact-note { margin-top: 18px; font-size: 12px; color: rgba(245,240,232,0.3); font-weight: 300; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .hero { padding: 100px 24px 64px; }
+    .hero-bg-letter { font-size: 280px; }
+    .hero-scroll { left: 24px; }
+    section { padding: 64px 24px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .how-grid { grid-template-columns: 1fr; gap: 40px; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .contact { padding: 72px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">devollop</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#how">How I work</a></li>
+    <li><a href="#testimonials">Results</a></li>
+    <li><a href="questionnaire.html">Start a project</a></li>
+  </ul>
+  <a href="questionnaire.html" class="nav-cta">Let's talk</a>
+  <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-letter">d</div>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Web · SEO · Strategy</p>
+    <h1 class="hero-wordmark">devollop</h1>
+    <p class="hero-descriptor">Your digital presence, <strong>made clear.</strong><br>
+    For local businesses with big ideas and a need for a real person to help build them.</p>
+    <a href="questionnaire.html" class="hero-cta">Start the conversation</a>
+  </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll to explore</span>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-inner">
+    <p class="section-label">What I do</p>
+    <h2 class="section-title">Three things, done well.</h2>
+    <div class="section-rule"></div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <div class="service-line"></div>
+        <h3 class="service-title">Web</h3>
+        <p class="service-desc">A beautiful website built around your brand — one you'll love and know how to update yourself. No more depending on someone else to change a word or swap a photo.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <div class="service-line"></div>
+        <h3 class="service-title">SEO</h3>
+        <p class="service-desc">Local search strategy that helps the right people find you — and helps you understand why it works. You'll know what's happening, not just hope the numbers go up.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <div class="service-line"></div>
+        <h3 class="service-title">Strategy</h3>
+        <p class="service-desc">Brand positioning, AEO, and social content — all working together. Your whole digital presence treated as one thing, not a pile of disconnected pieces.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW I WORK -->
+<section class="how" id="how">
+  <div class="section-inner">
+    <p class="section-label">How I work</p>
+    <h2 class="section-title" style="color:var(--cream)">Alongside you.<br>Not above you.</h2>
+    <div class="section-rule"></div>
+    <div class="how-grid">
+      <div class="how-left">
+        <p>Most agencies hand you a finished website and disappear. I do the opposite — <strong>I build it with you, teach you how to use it, and step back when you're ready.</strong></p>
+        <p>The goal isn't to keep you dependent on me. It's to leave you <em>confident and in control.</em> I'm still here when you need me — but most clients find they need less help than they expected.</p>
+        <p>No lock-in contracts. No jargon. Just <strong>clear work and a presence you're proud of.</strong></p>
+      </div>
+      <div class="how-steps">
+        <div class="how-step">
+          <span class="step-num">01</span>
+          <div class="step-content">
+            <h4>We start with a conversation</h4>
+            <p>A free 20-minute call to see if we're the right fit. No pitch, no pressure — just an honest conversation about where you are and where you want to go.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <span class="step-num">02</span>
+          <div class="step-content">
+            <h4>I build your presence</h4>
+            <p>Website, SEO foundation, brand positioning — all working together. You're involved throughout, not just handed a finished product at the end.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <span class="step-num">03</span>
+          <div class="step-content">
+            <h4>I teach you how it works</h4>
+            <p>Before we wrap up, you'll know how to edit your site, read your data, and understand what's driving results. No mystery, no dependency.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <span class="step-num">04</span>
+          <div class="step-content">
+            <h4>I'm still here</h4>
+            <p>You go run your business. If something comes up — a question, a new idea, a change you're unsure about — I'm a message away.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="section-inner">
+    <p class="section-label">Results</p>
+    <h2 class="section-title">What clients say.</h2>
+    <div class="section-rule"></div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card placeholder-card">
+        <p class="testimonial-text">Your first testimonial — what changed for your business after working together.</p>
+        <div class="testimonial-author">Client Name</div>
+        <div class="testimonial-biz">Business · Location</div>
+      </div>
+      <div class="testimonial-card placeholder-card">
+        <p class="testimonial-text">Your second testimonial — the result or feeling they want to share.</p>
+        <div class="testimonial-author">Client Name</div>
+        <div class="testimonial-biz">Business · Location</div>
+      </div>
+      <div class="testimonial-card placeholder-card">
+        <p class="testimonial-text">Your third testimonial — what made working with devollop different.</p>
+        <div class="testimonial-author">Client Name</div>
+        <div class="testimonial-biz">Business · Location</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <p class="section-label">Let's talk</p>
+    <h2 class="section-title">Ready to make sense of your online presence?</h2>
+    <div class="contact-rule"></div>
+    <p class="contact-sub">A free 20-minute call. No pitch, no pressure.<br>Just an honest conversation about what you need.</p>
+    <a href="questionnaire.html" class="contact-cta">Book a free call</a>
+    <p class="contact-note">Or email hello@devollop.com</p>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html" class="footer-logo">devollop</a>
+  <ul class="footer-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#how">How I work</a></li>
+    <li><a href="questionnaire.html">Start a project</a></li>
+  </ul>
+  <span class="footer-copy">© 2026 devollop</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
