@@ -1,92 +1,94 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="devollop Discovery Questionnaire — tell us about your business and let's get started.">
 <title>Start a Project — devollop</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="style.css">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <style>
   body { background: var(--white); }
 
-  .page-wrap {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 100px 24px 100px;
-  }
+.page-wrap {
+max-width: 680px;
+margin: 0 auto;
+padding: 100px 24px 100px;
+}
 
-  .form-header {
-    margin-bottom: 56px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid var(--rule);
-  }
-  .form-eyebrow { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 400; margin-bottom: 12px; }
-  .form-title { font-family: 'Fraunces', serif; font-weight: 500; font-size: 40px; letter-spacing: -0.025em; line-height: 1.05; font-variation-settings: "opsz" 144; color: var(--navy); margin-bottom: 16px; }
-  .form-rule { width: 48px; height: 2px; background: var(--gold); margin: 20px 0; }
-  .form-subtitle { font-size: 15px; color: var(--mid); line-height: 1.7; font-weight: 300; }
+.form-header {
+margin-bottom: 56px;
+padding-bottom: 40px;
+border-bottom: 1px solid var(–rule);
+}
+.form-eyebrow { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(–gold); font-weight: 400; margin-bottom: 12px; }
+.form-title { font-family: ‘Fraunces’, serif; font-weight: 500; font-size: 40px; letter-spacing: -0.025em; line-height: 1.05; font-variation-settings: “opsz” 144; color: var(–navy); margin-bottom: 16px; }
+.form-rule { width: 48px; height: 2px; background: var(–gold); margin: 20px 0; }
+.form-subtitle { font-size: 15px; color: var(–mid); line-height: 1.7; font-weight: 300; }
 
-  .form-section { margin-bottom: 52px; padding-bottom: 52px; border-bottom: 1px solid var(--rule); }
-  .form-section:last-of-type { border-bottom: none; }
+.form-section { margin-bottom: 52px; padding-bottom: 52px; border-bottom: 1px solid var(–rule); }
+.form-section:last-of-type { border-bottom: none; }
 
-  .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
-  .section-num { width: 34px; height: 34px; border-radius: 50%; background: var(--navy); color: var(--gold); font-family: 'Fraunces', serif; font-size: 14px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-variation-settings: "opsz" 72; }
-  .section-title { font-family: 'Fraunces', serif; font-weight: 500; font-size: 24px; letter-spacing: -0.015em; font-variation-settings: "opsz" 72; color: var(--navy); }
+.section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+.section-num { width: 34px; height: 34px; border-radius: 50%; background: var(–navy); color: var(–gold); font-family: ‘Fraunces’, serif; font-size: 14px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-variation-settings: “opsz” 72; }
+.section-title { font-family: ‘Fraunces’, serif; font-weight: 500; font-size: 24px; letter-spacing: -0.015em; font-variation-settings: “opsz” 72; color: var(–navy); }
 
-  .field-group { background: var(--light); border-radius: 8px; padding: 24px; margin-bottom: 18px; }
-  .field-group-title { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.field-group { background: var(–light); border-radius: 8px; padding: 24px; margin-bottom: 18px; }
+.field-group-title { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(–gold); margin-bottom: 16px; }
 
-  .field { margin-bottom: 16px; }
-  .field:last-child { margin-bottom: 0; }
-  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  @media (max-width: 500px) { .field-row { grid-template-columns: 1fr; } }
+.field { margin-bottom: 16px; }
+.field:last-child { margin-bottom: 0; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 500px) { .field-row { grid-template-columns: 1fr; } }
 
-  label { display: block; font-size: 14px; font-weight: 400; color: var(--navy); margin-bottom: 6px; }
-  label .req { color: var(--gold); }
-  .hint { display: block; font-size: 12px; color: var(--mid); font-weight: 300; margin-top: 3px; margin-bottom: 8px; line-height: 1.55; }
+label { display: block; font-size: 14px; font-weight: 400; color: var(–navy); margin-bottom: 6px; }
+label .req { color: var(–gold); }
+.hint { display: block; font-size: 12px; color: var(–mid); font-weight: 300; margin-top: 3px; margin-bottom: 8px; line-height: 1.55; }
 
-  input[type="text"], input[type="email"], input[type="tel"], input[type="url"], textarea {
-    width: 100%; background: var(--white); border: 1.5px solid #ddd5c8; border-radius: 4px;
-    padding: 11px 14px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 300;
-    color: var(--navy); transition: border-color 0.2s; outline: none;
-  }
-  input:focus, textarea:focus { border-color: var(--gold); }
-  textarea { min-height: 90px; resize: vertical; line-height: 1.6; }
-  textarea.tall { min-height: 130px; }
+input[type=“text”], input[type=“email”], input[type=“tel”], input[type=“url”], textarea {
+width: 100%; background: var(–white); border: 1.5px solid #ddd5c8; border-radius: 4px;
+padding: 11px 14px; font-family: ‘DM Sans’, sans-serif; font-size: 14px; font-weight: 300;
+color: var(–navy); transition: border-color 0.2s; outline: none;
+}
+input:focus, textarea:focus { border-color: var(–gold); }
+textarea { min-height: 90px; resize: vertical; line-height: 1.6; }
+textarea.tall { min-height: 130px; }
 
-  .options-list { display: flex; flex-direction: column; gap: 8px; }
-  .options-list.horizontal { flex-direction: row; flex-wrap: wrap; gap: 8px; }
-  .option-item { display: flex; align-items: center; gap: 10px; padding: 11px 14px; background: var(--white); border: 1.5px solid #ddd5c8; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: 300; color: var(--navy); transition: border-color 0.15s, background 0.15s; }
-  .option-item:hover { border-color: var(--gold); }
-  .option-item.checked { border-color: var(--gold); background: rgba(200,153,97,0.07); }
-  .option-item input[type="radio"], .option-item input[type="checkbox"] { width: 15px; height: 15px; accent-color: var(--gold); flex-shrink: 0; border: none; padding: 0; background: none; }
+.options-list { display: flex; flex-direction: column; gap: 8px; }
+.options-list.horizontal { flex-direction: row; flex-wrap: wrap; gap: 8px; }
+.option-item { display: flex; align-items: center; gap: 10px; padding: 11px 14px; background: var(–white); border: 1.5px solid #ddd5c8; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: 300; color: var(–navy); transition: border-color 0.15s, background 0.15s; }
+.option-item:hover { border-color: var(–gold); }
+.option-item.checked { border-color: var(–gold); background: rgba(200,153,97,0.07); }
+.option-item input[type=“radio”], .option-item input[type=“checkbox”] { width: 15px; height: 15px; accent-color: var(–gold); flex-shrink: 0; border: none; padding: 0; background: none; }
 
-  .pages-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-  @media (max-width: 480px) { .pages-grid { grid-template-columns: 1fr; } }
+.pages-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+@media (max-width: 480px) { .pages-grid { grid-template-columns: 1fr; } }
 
-  .conditional { display: none; margin-top: 14px; padding: 18px; background: var(--cream); border-radius: 4px; border-left: 3px solid var(--gold); }
-  .conditional.show { display: block; }
-  .conditional .field { margin-bottom: 14px; }
-  .conditional .field:last-child { margin-bottom: 0; }
+.conditional { display: none; margin-top: 14px; padding: 18px; background: var(–cream); border-radius: 4px; border-left: 3px solid var(–gold); }
+.conditional.show { display: block; }
+.conditional .field { margin-bottom: 14px; }
+.conditional .field:last-child { margin-bottom: 0; }
 
-  .repeater-item { background: var(--cream); border-radius: 6px; padding: 20px; margin-bottom: 10px; }
-  .repeater-label { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-  .repeater-item input, .repeater-item textarea { background: var(--white); }
+.repeater-item { background: var(–cream); border-radius: 6px; padding: 20px; margin-bottom: 10px; }
+.repeater-label { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(–gold); margin-bottom: 12px; }
+.repeater-item input, .repeater-item textarea { background: var(–white); }
 
-  .add-btn { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 400; color: var(--mid); background: none; border: 1.5px dashed #c4b9ad; border-radius: 4px; padding: 9px 16px; cursor: pointer; transition: border-color 0.2s, color 0.2s; margin-top: 4px; font-family: 'DM Sans', sans-serif; }
-  .add-btn:hover { border-color: var(--gold); color: var(--gold); }
+.add-btn { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 400; color: var(–mid); background: none; border: 1.5px dashed #c4b9ad; border-radius: 4px; padding: 9px 16px; cursor: pointer; transition: border-color 0.2s, color 0.2s; margin-top: 4px; font-family: ‘DM Sans’, sans-serif; }
+.add-btn:hover { border-color: var(–gold); color: var(–gold); }
 
-  .submit-wrap { text-align: center; padding-top: 48px; }
-  .submit-note { font-size: 13px; color: var(--mid); margin-bottom: 24px; line-height: 1.6; }
-  .btn-submit { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; color: var(--navy); background: var(--gold); border: none; border-radius: 3px; padding: 16px 48px; cursor: pointer; letter-spacing: 0.1em; text-transform: uppercase; transition: background 0.2s, transform 0.15s; }
-  .btn-submit:hover { background: #d4a96e; transform: translateY(-1px); }
+.submit-wrap { text-align: center; padding-top: 48px; }
+.submit-note { font-size: 13px; color: var(–mid); margin-bottom: 24px; line-height: 1.6; }
+.btn-submit { font-family: ‘DM Sans’, sans-serif; font-size: 13px; font-weight: 500; color: var(–navy); background: var(–gold); border: none; border-radius: 3px; padding: 16px 48px; cursor: pointer; letter-spacing: 0.1em; text-transform: uppercase; transition: background 0.2s, transform 0.15s; }
+.btn-submit:hover { background: #d4a96e; transform: translateY(-1px); }
 
-  .success-screen { display: none; text-align: center; padding: 80px 24px; }
-  .success-screen.show { display: block; }
-  .success-icon { width: 60px; height: 60px; background: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; }
-  .success-title { font-family: 'Fraunces', serif; font-size: 36px; font-weight: 500; letter-spacing: -0.02em; font-variation-settings: "opsz" 144; margin-bottom: 16px; }
-  .success-text { font-size: 15px; color: var(--mid); line-height: 1.7; max-width: 420px; margin: 0 auto; font-weight: 300; }
+.success-screen { display: none; text-align: center; padding: 80px 24px; }
+.success-screen.show { display: block; }
+.success-icon { width: 60px; height: 60px; background: var(–navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; }
+.success-title { font-family: ‘Fraunces’, serif; font-size: 36px; font-weight: 500; letter-spacing: -0.02em; font-variation-settings: “opsz” 144; margin-bottom: 16px; }
+.success-text { font-size: 15px; color: var(–mid); line-height: 1.7; max-width: 420px; margin: 0 auto; font-weight: 300; }
 </style>
+
 </head>
 <body>
 
@@ -113,303 +115,307 @@
   </div>
 
   <!-- ⚠️ FORMSPREE: Replace YOUR_FORM_ID below with your actual Formspree form ID -->
+
   <form id="discoveryForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
 
-    <!-- 1: ABOUT YOUR BRAND -->
-    <div class="form-section">
-      <div class="section-header">
-        <div class="section-num">1</div>
-        <h2 class="section-title">About Your Brand</h2>
+```
+<!-- 1: ABOUT YOUR BRAND -->
+<div class="form-section">
+  <div class="section-header">
+    <div class="section-num">1</div>
+    <h2 class="section-title">About Your Brand</h2>
+  </div>
+  <div class="field-group">
+    <div class="field-group-title">Your Details</div>
+    <div class="field-row">
+      <div class="field">
+        <label>First Name <span class="req">*</span></label>
+        <input type="text" name="first_name" required placeholder="Sarah">
       </div>
-      <div class="field-group">
-        <div class="field-group-title">Your Details</div>
-        <div class="field-row">
-          <div class="field">
-            <label>First Name <span class="req">*</span></label>
-            <input type="text" name="first_name" required placeholder="Sarah">
-          </div>
-          <div class="field">
-            <label>Last Name <span class="req">*</span></label>
-            <input type="text" name="last_name" required placeholder="Smith">
-          </div>
-        </div>
-        <div class="field">
-          <label>Email Address <span class="req">*</span></label>
-          <input type="email" name="email" required placeholder="hello@yourbusiness.com">
-        </div>
-        <div class="field">
-          <label>Mobile Number</label>
-          <input type="tel" name="phone" placeholder="(555) 000-0000">
-        </div>
-      </div>
-      <div class="field-group">
-        <div class="field-group-title">Your Business</div>
-        <div class="field">
-          <label>Brand Name <span class="req">*</span></label>
-          <span class="hint">This appears in all brand communications.</span>
-          <input type="text" name="brand_name" required placeholder="Your Business Name">
-        </div>
-        <div class="field">
-          <label>Domain Name</label>
-          <span class="hint">Current or desired website address.</span>
-          <input type="url" name="domain" placeholder="yourbusiness.com">
-        </div>
-        <div class="field">
-          <label>Tell us about your business</label>
-          <span class="hint">What you do, who you serve, what you offer.</span>
-          <textarea name="business_description" class="tall" placeholder="Tell us what you do and who you serve..."></textarea>
-        </div>
+      <div class="field">
+        <label>Last Name <span class="req">*</span></label>
+        <input type="text" name="last_name" required placeholder="Smith">
       </div>
     </div>
+    <div class="field">
+      <label>Email Address <span class="req">*</span></label>
+      <input type="email" name="email" required placeholder="hello@yourbusiness.com">
+    </div>
+    <div class="field">
+      <label>Mobile Number</label>
+      <input type="tel" name="phone" placeholder="(555) 000-0000">
+    </div>
+  </div>
+  <div class="field-group">
+    <div class="field-group-title">Your Business</div>
+    <div class="field">
+      <label>Brand Name <span class="req">*</span></label>
+      <span class="hint">This appears in all brand communications.</span>
+      <input type="text" name="brand_name" required placeholder="Your Business Name">
+    </div>
+    <div class="field">
+      <label>Domain Name</label>
+      <span class="hint">Current or desired website address.</span>
+      <input type="url" name="domain" placeholder="yourbusiness.com">
+    </div>
+    <div class="field">
+      <label>Tell us about your business</label>
+      <span class="hint">What you do, who you serve, what you offer.</span>
+      <textarea name="business_description" class="tall" placeholder="Tell us what you do and who you serve..."></textarea>
+    </div>
+  </div>
+</div>
 
-    <!-- 2: BUSINESS GOALS -->
-    <div class="form-section">
-      <div class="section-header">
-        <div class="section-num">2</div>
-        <h2 class="section-title">Your Business Goals</h2>
+<!-- 2: BUSINESS GOALS -->
+<div class="form-section">
+  <div class="section-header">
+    <div class="section-num">2</div>
+    <h2 class="section-title">Your Business Goals</h2>
+  </div>
+  <div class="field">
+    <label>Project Type <span class="req">*</span></label>
+    <div class="options-list">
+      <label class="option-item"><input type="radio" name="project_type" value="Brand Design"> Brand Design Project</label>
+      <label class="option-item"><input type="radio" name="project_type" value="Website Design"> Website Design Project</label>
+      <label class="option-item"><input type="radio" name="project_type" value="Brand + Website"> Brand and Website Design Project</label>
+    </div>
+  </div>
+  <div class="field">
+    <label>Objectives of this project</label>
+    <span class="hint">What are you hoping to achieve? What problem are we solving?</span>
+    <textarea name="objectives" placeholder="Our main goal is to..."></textarea>
+  </div>
+  <div class="field">
+    <label>Do you have an existing website?</label>
+    <div class="options-list horizontal">
+      <label class="option-item" onclick="toggle('existingYes', true); toggle('existingNo', false)">
+        <input type="radio" name="existing_website" value="Yes"> Yes
+      </label>
+      <label class="option-item" onclick="toggle('existingYes', false); toggle('existingNo', true)">
+        <input type="radio" name="existing_website" value="No"> No
+      </label>
+    </div>
+    <div class="conditional" id="existingYes">
+      <div class="field">
+        <label>Insights from your existing site</label>
+        <textarea name="existing_site_insights" placeholder="Traffic, what's working, what isn't..."></textarea>
       </div>
       <div class="field">
-        <label>Project Type <span class="req">*</span></label>
-        <div class="options-list">
-          <label class="option-item"><input type="radio" name="project_type" value="Brand Design"> Brand Design Project</label>
-          <label class="option-item"><input type="radio" name="project_type" value="Website Design"> Website Design Project</label>
-          <label class="option-item"><input type="radio" name="project_type" value="Brand + Website"> Brand and Website Design Project</label>
-        </div>
+        <label>Existing customer data</label>
+        <textarea name="customer_data" placeholder="Subscriber count, feedback, analytics..."></textarea>
       </div>
       <div class="field">
-        <label>Objectives of this project</label>
-        <span class="hint">What are you hoping to achieve? What problem are we solving?</span>
-        <textarea name="objectives" placeholder="Our main goal is to..."></textarea>
-      </div>
-      <div class="field">
-        <label>Do you have an existing website?</label>
-        <div class="options-list horizontal">
-          <label class="option-item" onclick="toggle('existingYes', true); toggle('existingNo', false)">
-            <input type="radio" name="existing_website" value="Yes"> Yes
-          </label>
-          <label class="option-item" onclick="toggle('existingYes', false); toggle('existingNo', true)">
-            <input type="radio" name="existing_website" value="No"> No
-          </label>
-        </div>
-        <div class="conditional" id="existingYes">
-          <div class="field">
-            <label>Insights from your existing site</label>
-            <textarea name="existing_site_insights" placeholder="Traffic, what's working, what isn't..."></textarea>
-          </div>
-          <div class="field">
-            <label>Existing customer data</label>
-            <textarea name="customer_data" placeholder="Subscriber count, feedback, analytics..."></textarea>
-          </div>
-          <div class="field">
-            <label>Comments about your current site</label>
-            <textarea name="site_comments" placeholder="What do you wish was different?"></textarea>
-          </div>
-        </div>
-        <div class="conditional" id="existingNo">
-          <p style="font-size:13px;color:var(--mid);">No problem — we'll start fresh and build something you'll love.</p>
-        </div>
-      </div>
-      <div class="field">
-        <label>How will we measure success?</label>
-        <span class="hint">e.g. More leads, higher local rankings, increased brand awareness.</span>
-        <textarea name="success_metrics" placeholder="Success looks like..."></textarea>
+        <label>Comments about your current site</label>
+        <textarea name="site_comments" placeholder="What do you wish was different?"></textarea>
       </div>
     </div>
+    <div class="conditional" id="existingNo">
+      <p style="font-size:13px;color:var(--mid);">No problem — we'll start fresh and build something you'll love.</p>
+    </div>
+  </div>
+  <div class="field">
+    <label>How will we measure success?</label>
+    <span class="hint">e.g. More leads, higher local rankings, increased brand awareness.</span>
+    <textarea name="success_metrics" placeholder="Success looks like..."></textarea>
+  </div>
+</div>
 
-    <!-- 3: USER GOALS -->
-    <div class="form-section">
-      <div class="section-header">
-        <div class="section-num">3</div>
-        <h2 class="section-title">Your Ideal Visitors</h2>
-      </div>
-      <div class="field">
-        <label>Describe your ideal website visitors</label>
-        <span class="hint">Who are they? How do they find you? What are they looking for?</span>
-      </div>
-      <div id="usersContainer">
-        <div class="repeater-item">
-          <div class="repeater-label">Visitor One</div>
-          <textarea name="visitor_one" placeholder="e.g. 38yr old local business owner, looking for web design help, finds me via Google..."></textarea>
-        </div>
-        <div class="repeater-item">
-          <div class="repeater-label">Visitor Two</div>
-          <textarea name="visitor_two" placeholder="Describe a second visitor type if applicable..."></textarea>
-        </div>
-      </div>
-      <button type="button" class="add-btn" onclick="addUser()">+ Add another visitor type</button>
-      <div class="field" style="margin-top:24px;">
-        <label>Primary action you want visitors to take</label>
-        <span class="hint">Book a call? Fill a form? Subscribe? Purchase?</span>
-        <textarea name="primary_action" placeholder="e.g. Book a free 20-minute discovery call"></textarea>
-      </div>
+<!-- 3: USER GOALS -->
+<div class="form-section">
+  <div class="section-header">
+    <div class="section-num">3</div>
+    <h2 class="section-title">Your Ideal Visitors</h2>
+  </div>
+  <div class="field">
+    <label>Describe your ideal website visitors</label>
+    <span class="hint">Who are they? How do they find you? What are they looking for?</span>
+  </div>
+  <div id="usersContainer">
+    <div class="repeater-item">
+      <div class="repeater-label">Visitor One</div>
+      <textarea name="visitor_one" placeholder="e.g. 38yr old local business owner, looking for web design help, finds me via Google..."></textarea>
     </div>
+    <div class="repeater-item">
+      <div class="repeater-label">Visitor Two</div>
+      <textarea name="visitor_two" placeholder="Describe a second visitor type if applicable..."></textarea>
+    </div>
+  </div>
+  <button type="button" class="add-btn" onclick="addUser()">+ Add another visitor type</button>
+  <div class="field" style="margin-top:24px;">
+    <label>Primary action you want visitors to take</label>
+    <span class="hint">Book a call? Fill a form? Subscribe? Purchase?</span>
+    <textarea name="primary_action" placeholder="e.g. Book a free 20-minute discovery call"></textarea>
+  </div>
+</div>
 
-    <!-- 4: MAGIC -->
-    <div class="form-section">
-      <div class="section-header">
-        <div class="section-num">4</div>
-        <h2 class="section-title">Your Magic</h2>
-      </div>
-      <div class="field">
-        <label>1–3 brands that do similar work</label>
-        <span class="hint">Doesn't need to be the same industry — just comparable in some way.</span>
-        <textarea name="competitors" placeholder="Brand A — great local presence&#10;Brand B — clean, trustworthy site"></textarea>
-      </div>
-      <div class="field">
-        <label>Your main selling point</label>
-        <span class="hint">Why do clients choose you? What unique value do you bring?</span>
-        <textarea name="selling_point" class="tall" placeholder="My magic is..."></textarea>
-      </div>
-    </div>
+<!-- 4: MAGIC -->
+<div class="form-section">
+  <div class="section-header">
+    <div class="section-num">4</div>
+    <h2 class="section-title">Your Magic</h2>
+  </div>
+  <div class="field">
+    <label>1–3 brands that do similar work</label>
+    <span class="hint">Doesn't need to be the same industry — just comparable in some way.</span>
+    <textarea name="competitors" placeholder="Brand A — great local presence&#10;Brand B — clean, trustworthy site"></textarea>
+  </div>
+  <div class="field">
+    <label>Your main selling point</label>
+    <span class="hint">Why do clients choose you? What unique value do you bring?</span>
+    <textarea name="selling_point" class="tall" placeholder="My magic is..."></textarea>
+  </div>
+</div>
 
-    <!-- 5: DESIGN DIRECTION -->
-    <div class="form-section">
-      <div class="section-header">
-        <div class="section-num">5</div>
-        <h2 class="section-title">Design Direction</h2>
-      </div>
+<!-- 5: DESIGN DIRECTION -->
+<div class="form-section">
+  <div class="section-header">
+    <div class="section-num">5</div>
+    <h2 class="section-title">Design Direction</h2>
+  </div>
+  <div class="field">
+    <label>Three words — how visitors should <em>feel</em></label>
+    <span class="hint">e.g. Calm, Confident, Inspired, Trusted</span>
+    <div class="field-row" style="margin-bottom:10px;">
+      <input type="text" name="feeling_1" placeholder="Feeling 1">
+      <input type="text" name="feeling_2" placeholder="Feeling 2">
+    </div>
+    <input type="text" name="feeling_3" placeholder="Feeling 3">
+  </div>
+  <div class="field">
+    <label>Three words — look & feel</label>
+    <span class="hint">e.g. Minimal, Sophisticated, Warm, Bold, Editorial</span>
+    <textarea name="look_feel" placeholder="e.g. Clean, modern, trustworthy"></textarea>
+  </div>
+  <div class="field">
+    <label>Custom brand photos?</label>
+    <div class="options-list">
+      <label class="option-item"><input type="radio" name="photos" value="Yes - providing"> Yes — I'll provide hi-res photos</label>
+      <label class="option-item"><input type="radio" name="photos" value="No - need sourcing"> No — need help sourcing photos</label>
+    </div>
+    <div class="field" style="margin-top:10px;">
+      <label>Notes on photography</label>
+      <input type="text" name="photo_notes" placeholder="Style, tone, subjects, mood...">
+    </div>
+  </div>
+  <div class="field">
+    <label>Existing brand guidelines?</label>
+    <div class="options-list horizontal">
+      <label class="option-item" onclick="toggle('brandYes', true)"><input type="radio" name="brand_guidelines" value="Yes"> Yes</label>
+      <label class="option-item" onclick="toggle('brandYes', false)"><input type="radio" name="brand_guidelines" value="No"> No</label>
+    </div>
+    <div class="conditional" id="brandYes">
       <div class="field">
-        <label>Three words — how visitors should <em>feel</em></label>
-        <span class="hint">e.g. Calm, Confident, Inspired, Trusted</span>
-        <div class="field-row" style="margin-bottom:10px;">
-          <input type="text" name="feeling_1" placeholder="Feeling 1">
-          <input type="text" name="feeling_2" placeholder="Feeling 2">
-        </div>
-        <input type="text" name="feeling_3" placeholder="Feeling 3">
-      </div>
-      <div class="field">
-        <label>Three words — look & feel</label>
-        <span class="hint">e.g. Minimal, Sophisticated, Warm, Bold, Editorial</span>
-        <textarea name="look_feel" placeholder="e.g. Clean, modern, trustworthy"></textarea>
-      </div>
-      <div class="field">
-        <label>Custom brand photos?</label>
-        <div class="options-list">
-          <label class="option-item"><input type="radio" name="photos" value="Yes - providing"> Yes — I'll provide hi-res photos</label>
-          <label class="option-item"><input type="radio" name="photos" value="No - need sourcing"> No — need help sourcing photos</label>
-        </div>
-        <div class="field" style="margin-top:10px;">
-          <label>Notes on photography</label>
-          <input type="text" name="photo_notes" placeholder="Style, tone, subjects, mood...">
-        </div>
-      </div>
-      <div class="field">
-        <label>Existing brand guidelines?</label>
-        <div class="options-list horizontal">
-          <label class="option-item" onclick="toggle('brandYes', true)"><input type="radio" name="brand_guidelines" value="Yes"> Yes</label>
-          <label class="option-item" onclick="toggle('brandYes', false)"><input type="radio" name="brand_guidelines" value="No"> No</label>
-        </div>
-        <div class="conditional" id="brandYes">
-          <div class="field">
-            <label>Share your brand guidelines</label>
-            <input type="url" name="brand_guidelines_link" placeholder="Link to guidelines" style="margin-bottom:10px;">
-            <textarea name="brand_guidelines_notes" placeholder="Or describe your logo, colors, fonts..."></textarea>
-          </div>
-        </div>
-      </div>
-      <div class="field">
-        <label>Website references & design inspiration</label>
-        <span class="hint">Sites you love and what specifically draws you — layout, imagery, fonts, simplicity, etc.</span>
-        <div id="refsContainer">
-          <div class="repeater-item">
-            <div class="repeater-label">Reference One</div>
-            <input type="url" name="ref_url_1" placeholder="Website URL" style="margin-bottom:10px;width:100%;background:#fff;border:1.5px solid #ddd5c8;border-radius:4px;padding:11px 14px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:300;color:#1a2332;outline:none;">
-            <textarea name="ref_notes_1" placeholder="What do you love about it?"></textarea>
-          </div>
-          <div class="repeater-item">
-            <div class="repeater-label">Reference Two</div>
-            <input type="url" name="ref_url_2" placeholder="Website URL" style="margin-bottom:10px;width:100%;background:#fff;border:1.5px solid #ddd5c8;border-radius:4px;padding:11px 14px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:300;color:#1a2332;outline:none;">
-            <textarea name="ref_notes_2" placeholder="What do you love about it?"></textarea>
-          </div>
-        </div>
-        <button type="button" class="add-btn" onclick="addRef()">+ Add another reference</button>
+        <label>Share your brand guidelines</label>
+        <input type="url" name="brand_guidelines_link" placeholder="Link to guidelines" style="margin-bottom:10px;">
+        <textarea name="brand_guidelines_notes" placeholder="Or describe your logo, colors, fonts..."></textarea>
       </div>
     </div>
+  </div>
+  <div class="field">
+    <label>Website references & design inspiration</label>
+    <span class="hint">Sites you love and what specifically draws you — layout, imagery, fonts, simplicity, etc.</span>
+    <div id="refsContainer">
+      <div class="repeater-item">
+        <div class="repeater-label">Reference One</div>
+        <input type="url" name="ref_url_1" placeholder="Website URL" style="margin-bottom:10px;width:100%;background:#fff;border:1.5px solid #ddd5c8;border-radius:4px;padding:11px 14px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:300;color:#1a2332;outline:none;">
+        <textarea name="ref_notes_1" placeholder="What do you love about it?"></textarea>
+      </div>
+      <div class="repeater-item">
+        <div class="repeater-label">Reference Two</div>
+        <input type="url" name="ref_url_2" placeholder="Website URL" style="margin-bottom:10px;width:100%;background:#fff;border:1.5px solid #ddd5c8;border-radius:4px;padding:11px 14px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:300;color:#1a2332;outline:none;">
+        <textarea name="ref_notes_2" placeholder="What do you love about it?"></textarea>
+      </div>
+    </div>
+    <button type="button" class="add-btn" onclick="addRef()">+ Add another reference</button>
+  </div>
+</div>
 
-    <!-- 6: PAGES -->
-    <div class="form-section">
-      <div class="section-header">
-        <div class="section-num">6</div>
-        <h2 class="section-title">Your Pages</h2>
-      </div>
-      <div class="field">
-        <label>Pages your website needs</label>
-        <span class="hint">Standard packages include 6 pages. Blog/collections count as one. Privacy Policy and T&Cs don't count toward your total.</span>
-        <div class="pages-grid" style="margin-top:10px;">
-          <label class="option-item"><input type="checkbox" name="pages" value="Homepage"> Homepage</label>
-          <label class="option-item"><input type="checkbox" name="pages" value="About"> About Page</label>
-          <label class="option-item"><input type="checkbox" name="pages" value="Services"> Services Page</label>
-          <label class="option-item"><input type="checkbox" name="pages" value="Portfolio"> Portfolio / Work</label>
-          <label class="option-item"><input type="checkbox" name="pages" value="Blog"> Blog</label>
-          <label class="option-item"><input type="checkbox" name="pages" value="Contact"> Contact Page</label>
-          <label class="option-item"><input type="checkbox" name="pages" value="Shop"> Shop / Store</label>
-          <label class="option-item"><input type="checkbox" name="pages" value="Testimonials"> Testimonials</label>
-          <label class="option-item"><input type="checkbox" name="pages" value="FAQ"> FAQ Page</label>
-          <label class="option-item"><input type="checkbox" name="pages" value="Events"> Events Page</label>
-          <label class="option-item"><input type="checkbox" name="pages" value="Courses"> Courses Page</label>
-          <label class="option-item"><input type="checkbox" name="pages" value="Press"> Press</label>
-        </div>
-      </div>
-      <div class="field">
-        <label>Other pages or notes</label>
-        <textarea name="other_pages" placeholder="Additional pages or details..."></textarea>
-      </div>
-      <div class="field">
-        <label>Main navigation links</label>
-        <span class="hint">e.g. Home, About, Services, Contact</span>
-        <input type="text" name="nav_links" placeholder="Home, About, Services, Contact">
-      </div>
+<!-- 6: PAGES -->
+<div class="form-section">
+  <div class="section-header">
+    <div class="section-num">6</div>
+    <h2 class="section-title">Your Pages</h2>
+  </div>
+  <div class="field">
+    <label>Pages your website needs</label>
+    <span class="hint">Standard packages include 6 pages. Blog/collections count as one. Privacy Policy and T&Cs don't count toward your total.</span>
+    <div class="pages-grid" style="margin-top:10px;">
+      <label class="option-item"><input type="checkbox" name="pages" value="Homepage"> Homepage</label>
+      <label class="option-item"><input type="checkbox" name="pages" value="About"> About Page</label>
+      <label class="option-item"><input type="checkbox" name="pages" value="Services"> Services Page</label>
+      <label class="option-item"><input type="checkbox" name="pages" value="Portfolio"> Portfolio / Work</label>
+      <label class="option-item"><input type="checkbox" name="pages" value="Blog"> Blog</label>
+      <label class="option-item"><input type="checkbox" name="pages" value="Contact"> Contact Page</label>
+      <label class="option-item"><input type="checkbox" name="pages" value="Shop"> Shop / Store</label>
+      <label class="option-item"><input type="checkbox" name="pages" value="Testimonials"> Testimonials</label>
+      <label class="option-item"><input type="checkbox" name="pages" value="FAQ"> FAQ Page</label>
+      <label class="option-item"><input type="checkbox" name="pages" value="Events"> Events Page</label>
+      <label class="option-item"><input type="checkbox" name="pages" value="Courses"> Courses Page</label>
+      <label class="option-item"><input type="checkbox" name="pages" value="Press"> Press</label>
     </div>
+  </div>
+  <div class="field">
+    <label>Other pages or notes</label>
+    <textarea name="other_pages" placeholder="Additional pages or details..."></textarea>
+  </div>
+  <div class="field">
+    <label>Main navigation links</label>
+    <span class="hint">e.g. Home, About, Services, Contact</span>
+    <input type="text" name="nav_links" placeholder="Home, About, Services, Contact">
+  </div>
+</div>
 
-    <!-- 7: TEAM -->
-    <div class="form-section">
-      <div class="section-header">
-        <div class="section-num">7</div>
-        <h2 class="section-title">Your Team</h2>
-      </div>
-      <div class="field">
-        <label>Main decision-maker</label>
-        <span class="hint">Who will sign off and approve proposals?</span>
-        <input type="text" name="decision_maker" placeholder="Full name">
-      </div>
-      <div class="field">
-        <label>Main point of contact</label>
-        <span class="hint">May be the same person or a different team member.</span>
-        <textarea name="point_of_contact" placeholder="Name — email@example.com"></textarea>
-      </div>
-      <div class="field">
-        <label>Other team members involved</label>
-        <span class="hint">Copywriter, photographer, SEO strategist — name, role, contact.</span>
-        <textarea name="other_team" placeholder="Name — Role — email@example.com"></textarea>
-      </div>
-    </div>
+<!-- 7: TEAM -->
+<div class="form-section">
+  <div class="section-header">
+    <div class="section-num">7</div>
+    <h2 class="section-title">Your Team</h2>
+  </div>
+  <div class="field">
+    <label>Main decision-maker</label>
+    <span class="hint">Who will sign off and approve proposals?</span>
+    <input type="text" name="decision_maker" placeholder="Full name">
+  </div>
+  <div class="field">
+    <label>Main point of contact</label>
+    <span class="hint">May be the same person or a different team member.</span>
+    <textarea name="point_of_contact" placeholder="Name — email@example.com"></textarea>
+  </div>
+  <div class="field">
+    <label>Other team members involved</label>
+    <span class="hint">Copywriter, photographer, SEO strategist — name, role, contact.</span>
+    <textarea name="other_team" placeholder="Name — Role — email@example.com"></textarea>
+  </div>
+</div>
 
-    <!-- 8: TIMELINE -->
-    <div class="form-section">
-      <div class="section-header">
-        <div class="section-num">8</div>
-        <h2 class="section-title">Timeline</h2>
-      </div>
-      <div class="field">
-        <label>Project Timeline</label>
-        <span class="hint">Target launch date and any key milestones — events, seasons, product launches.</span>
-        <textarea name="timeline" class="tall" placeholder="Target launch date, any deadlines or milestones..."></textarea>
-      </div>
-      <div class="field">
-        <label>Additional Remarks</label>
-        <span class="hint">Anything else you'd like me to know before we get started.</span>
-        <textarea name="remarks" class="tall" placeholder="Questions, concerns, hopes for this project..."></textarea>
-      </div>
-    </div>
+<!-- 8: TIMELINE -->
+<div class="form-section">
+  <div class="section-header">
+    <div class="section-num">8</div>
+    <h2 class="section-title">Timeline</h2>
+  </div>
+  <div class="field">
+    <label>Project Timeline</label>
+    <span class="hint">Target launch date and any key milestones — events, seasons, product launches.</span>
+    <textarea name="timeline" class="tall" placeholder="Target launch date, any deadlines or milestones..."></textarea>
+  </div>
+  <div class="field">
+    <label>Additional Remarks</label>
+    <span class="hint">Anything else you'd like me to know before we get started.</span>
+    <textarea name="remarks" class="tall" placeholder="Questions, concerns, hopes for this project..."></textarea>
+  </div>
+</div>
 
-    <div class="submit-wrap">
-      <p class="submit-note">That's everything. I'll review your answers and be in touch within 1–2 business days to set up our discovery call.</p>
-      <button type="submit" class="btn-submit">Submit →</button>
-    </div>
+<div class="submit-wrap">
+  <p class="submit-note">That's everything. I'll review your answers and be in touch within 1–2 business days to set up our discovery call.</p>
+  <button type="submit" class="btn-submit">Submit →</button>
+</div>
+```
 
   </form>
 
   <!-- SUCCESS -->
+
   <div class="success-screen" id="successScreen">
     <div class="success-icon">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c89961" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -432,7 +438,8 @@
   <span class="footer-copy">© 2026 devollop</span>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="main.js"></script>
+
 <script>
   // Formspree AJAX submission
   const form = document.getElementById('discoveryForm');
@@ -486,23 +493,26 @@
     const div = document.createElement('div');
     div.className = 'repeater-item';
     div.innerHTML = `<div class="repeater-label">Visitor ${label}</div><textarea name="visitor_${userCount}" style="${s}" placeholder="Describe this visitor type..."></textarea>`;
-    document.getElementById('usersContainer').appendChild(div);
-  }
 
-  let refCount = 2;
-  function addRef() {
-    refCount++;
-    const labels = ['Three','Four','Five'];
-    const label = labels[refCount - 3] || refCount;
-    const is = `margin-bottom:10px;width:100%;background:#fff;border:1.5px solid #ddd5c8;border-radius:4px;padding:11px 14px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:300;color:#1a2332;outline:none;`;
-    const ts = `width:100%;background:#fff;border:1.5px solid #ddd5c8;border-radius:4px;padding:11px 14px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:300;color:#1a2332;outline:none;min-height:90px;resize:vertical;line-height:1.6;`;
-    const div = document.createElement('div');
-    div.className = 'repeater-item';
-    div.innerHTML = `<div class="repeater-label">Reference ${label}</div>
-      <input type="url" name="ref_url_${refCount}" placeholder="Website URL" style="${is}">
-      <textarea name="ref_notes_${refCount}" placeholder="What do you love about it?" style="${ts}"></textarea>`;
-    document.getElementById('refsContainer').appendChild(div);
-  }
+```
+document.getElementById('usersContainer').appendChild(div);
+```
+
+}
+
+let refCount = 2;
+function addRef() {
+refCount++;
+const labels = [‘Three’,‘Four’,‘Five’];
+const label = labels[refCount - 3] || refCount;
+const is = `margin-bottom:10px;width:100%;background:#fff;border:1.5px solid #ddd5c8;border-radius:4px;padding:11px 14px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:300;color:#1a2332;outline:none;`;
+const ts = `width:100%;background:#fff;border:1.5px solid #ddd5c8;border-radius:4px;padding:11px 14px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:300;color:#1a2332;outline:none;min-height:90px;resize:vertical;line-height:1.6;`;
+const div = document.createElement(‘div’);
+div.className = ‘repeater-item’;
+div.innerHTML = `<div class="repeater-label">Reference ${label}</div> <input type="url" name="ref_url_${refCount}" placeholder="Website URL" style="${is}"> <textarea name="ref_notes_${refCount}" placeholder="What do you love about it?" style="${ts}"></textarea>`;
+document.getElementById(‘refsContainer’).appendChild(div);
+}
 </script>
+
 </body>
 </html>
